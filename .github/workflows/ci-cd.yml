@@ -42,7 +42,7 @@ jobs:
       - name: Checkout GitOps repo
         uses: actions/checkout@v4
         with:
-          repository: jumptotechschooldevops/grade-api-gitops
+          repository: ermekerkimbaev/grade-api-gitops
           token: ${{ secrets.GITOPS_PAT }}
           path: gitops
 
@@ -50,7 +50,7 @@ jobs:
       - name: Update image tag in GitOps repo
         run: |
           cd gitops
-          sed -i 's|image:.*|image: ghcr.io/jumptotechschooldevops/k8s-ci-build:${{ github.sha }}|g' deployment.yaml
+          sed -i 's|image:.*|image: ghcr.io/ermekerkimbaev/k8s-ci-build:${{ github.sha }}|g' deployment.yaml
 
       # 6) Commit and push GitOps changes
       - name: Commit and push GitOps changes
