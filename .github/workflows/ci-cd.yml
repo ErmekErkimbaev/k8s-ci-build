@@ -32,7 +32,8 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/ErmekErkimbaev/k8s-ci-build:<commit-sha>
+          tags: ghcr.io/${{ github.repository }}:${{ github.sha }}
+
 
 
       # 4) Checkout GitOps repository
