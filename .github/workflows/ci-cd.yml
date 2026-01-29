@@ -4,6 +4,10 @@ on:
 name: CI - Build Image and Update GitOps
 
 on:
+permissions:
+  contents: read
+  packages: write
+
   push:
     branches:
       - main
